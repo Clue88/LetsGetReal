@@ -84,30 +84,24 @@ public class Tester {
 
         test = "RationalNumber.getNumerator()";
         try {
-            int rand = (int) Math.floor(Math.random() * 1000);
-            int rand1 = (int) Math.floor(Math.random() * 1000);
-            RationalNumber num = new RationalNumber(rand, rand1);
-            check(test, num.getNumerator(), rand);
+            RationalNumber num = new RationalNumber(3, 7);
+            check(test, num.getNumerator(), 3);
         } catch (RuntimeException e) {
             except(test, e);
         }
 
         test = "RationalNumber.getDenominator()";
         try {
-            int rand = (int) Math.floor(Math.random() * 1000);
-            int rand1 = (int) Math.floor(Math.random() * 1000);
-            RationalNumber num = new RationalNumber(rand, rand1);
-            check(test, num.getDenominator(), rand1);
+            RationalNumber num = new RationalNumber(3, 7);
+            check(test, num.getDenominator(), 7);
         } catch (RuntimeException e) {
             except(test, e);
         }
 
         test = "RationalNumber.getValue()";
         try {
-            int rand = (int) Math.floor(Math.random() * 1000);
-            int rand1 = (int) Math.floor(Math.random() * 1000);
-            RationalNumber num = new RationalNumber(rand, rand1);
-            check(test, num.getValue(), (double) rand / rand1);
+            RationalNumber num = new RationalNumber(3, 7);
+            check(test, num.getValue(), (double) 3 / 7);
         } catch(RuntimeException e) {
             except(test, e);
         }
@@ -129,7 +123,7 @@ public class Tester {
             int rand2 = (int) Math.floor(Math.random() * 1000);
             int rand3 = (int) Math.floor(Math.random() * 1000);
             RationalNumber num = new RationalNumber(rand, rand1);
-            RationalNumber other = new RationalNumber(rand, rand1);
+            RationalNumber other = new RationalNumber(rand*2, rand1*2);
             RationalNumber other1 = new RationalNumber(rand2, rand3);
             check(test, num.equals(other), true);
             check(test, num.equals(other1), false);
@@ -139,10 +133,16 @@ public class Tester {
 
         test = "RationalNumber.toString()";
         try {
-            int rand = (int) Math.floor(Math.random() * 1000);
-            int rand1 = (int) Math.floor(Math.random() * 1000);
-            RationalNumber num = new RationalNumber(rand, rand1);
-            check(test, num.toString(), rand + "/" + rand1);
+            RationalNumber num = new RationalNumber(43, 7);
+            check(test, num.toString(), "43/7");
+        } catch(RuntimeException e) {
+            except(test, e);
+        }
+
+        test = "RationalNumber.reduce()";
+        try {
+            RationalNumber num = new RationalNumber(210, 45);
+            check(test, num.toString(), "14/3");
         } catch(RuntimeException e) {
             except(test, e);
         }
