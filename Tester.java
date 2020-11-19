@@ -34,6 +34,17 @@ public class Tester {
             except(test, e);
         }
 
+        test = "RealNumber.add(RealNumber other)";
+        try {
+            double rand = Math.random() * 1000;
+            double rand1 = Math.random() * 1000;
+            RealNumber num = new RealNumber(rand);
+            RealNumber other = new RealNumber(rand1);
+            check(test, (num.add(other)).toString(), rand+rand1+"");
+        } catch(RuntimeException e) {
+            except(test, e);
+        }
+
         if (ERR == 0) System.out.println("All good!");
         else if (ERR == 1) System.out.println("Uh oh... 1 error found.");
         else System.out.println("Uh oh... " + ERR + " errors found.");
