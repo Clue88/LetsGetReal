@@ -22,6 +22,17 @@ public class Tester {
             except(test, e);
         }
         
+        test = "RealNumber.equals(RealNumber other)";
+        try {
+            RealNumber num = new RealNumber(1.0);
+            RealNumber other = new RealNumber(1.000000001);
+            check(test, num.equals(other), true);
+
+            other = new RealNumber(1.1);
+            check(test, num.equals(other), false);
+        } catch(RuntimeException e) {
+            except(test, e);
+        }
 
         if (ERR == 0) System.out.println("All good!");
         else if (ERR == 1) System.out.println("Uh oh... 1 error found.");

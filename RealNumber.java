@@ -12,4 +12,11 @@ public class RealNumber {
     public String toString() {
         return "" + getValue();
     }
+
+    public boolean equals(RealNumber other) {
+        if (getValue() == 0 || other.getValue() == 0) {
+            return getValue() == other.getValue();
+        }
+        return Math.abs((other.getValue() - getValue()) / getValue()) < 0.00001; 
+    }
 }
