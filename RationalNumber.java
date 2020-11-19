@@ -10,6 +10,10 @@ public class RationalNumber extends RealNumber {
             denominator = 1;
         }
         reduce();
+        if (denominator < 0) {
+            numerator *= -1;
+            denominator *= -1;
+        }
     }
 
     public int getNumerator() {

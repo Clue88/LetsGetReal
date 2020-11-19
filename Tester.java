@@ -180,7 +180,7 @@ public class Tester {
         try {
             RationalNumber num = new RationalNumber(21, 65);
             RationalNumber other = new RationalNumber(42, 5);
-            check(test, num.subtract(other).toString(), "");
+            check(test, num.subtract(other).toString(), "-105/13");
         } catch(RuntimeException e) {
             except(test, e);
         }
