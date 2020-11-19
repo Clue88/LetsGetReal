@@ -7,7 +7,15 @@ public class RationalNumber extends RealNumber {
         denominator = demo;
     }
 
+    public int getNumerator() {
+        return numerator;
+    }
+
+    public int getDenominator() {
+        return denominator;
+    }
+
     public double getValue() {
-        return (double) numerator / denominator;
+        return (double) getNumerator() / getDenominator();
     }
 }

@@ -78,6 +78,26 @@ public class Tester {
             except(test, e);
         }
 
+        test = "RationalNumber.getNumerator()";
+        try {
+            int rand = (int) Math.floor(Math.random() * 1000);
+            int rand1 = (int) Math.floor(Math.random() * 1000);
+            RationalNumber num = new RationalNumber(rand, rand1);
+            check(test, num.getNumerator(), rand);
+        } catch (RuntimeException e) {
+            except(test, e);
+        }
+
+        test = "RationalNumber.getDenominator()";
+        try {
+            int rand = (int) Math.floor(Math.random() * 1000);
+            int rand1 = (int) Math.floor(Math.random() * 1000);
+            RationalNumber num = new RationalNumber(rand, rand1);
+            check(test, num.getDenominator(), rand1);
+        } catch (RuntimeException e) {
+            except(test, e);
+        }
+
         test = "RationalNumber.getValue()";
         try {
             int rand = (int) Math.floor(Math.random() * 1000);
