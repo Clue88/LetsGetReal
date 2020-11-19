@@ -24,12 +24,16 @@ public class Tester {
         
         test = "RealNumber.equals(RealNumber other)";
         try {
-            RealNumber num = new RealNumber(1.0);
-            RealNumber other = new RealNumber(1.000000001);
+            RealNumber num = new RealNumber(3.5);
+            RealNumber other = new RealNumber(3.500000001);
+            
             check(test, num.equals(other), true);
 
             other = new RealNumber(1.1);
             check(test, num.equals(other), false);
+
+            RationalNumber other1 = new RationalNumber(7, 2);
+            check(test, num.equals(other1), true);
         } catch(RuntimeException e) {
             except(test, e);
         }
@@ -118,7 +122,7 @@ public class Tester {
             except(test, e);
         }
 
-        test = "RationalNumber.equals()";
+        test = "RationalNumber.equals(RationalNumber other)";
         try {
             int rand = (int) Math.floor(Math.random() * 1000);
             int rand1 = (int) Math.floor(Math.random() * 1000);
