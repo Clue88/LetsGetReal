@@ -133,6 +133,16 @@ public class Tester {
             except(test, e);
         }
 
+        test = "RationalNumber.toString()";
+        try {
+            int rand = (int) Math.floor(Math.random() * 1000);
+            int rand1 = (int) Math.floor(Math.random() * 1000);
+            RationalNumber num = new RationalNumber(rand, rand1);
+            check(test, num.toString(), rand + "/" + rand1);
+        } catch(RuntimeException e) {
+            except(test, e);
+        }
+
         if (ERR == 0) System.out.println("All good!");
         else if (ERR == 1) System.out.println("Uh oh... 1 error found.");
         else System.out.println("Uh oh... " + ERR + " errors found.");

@@ -26,4 +26,8 @@ public class RationalNumber extends RealNumber {
     public boolean equals(RationalNumber other) {
         return getNumerator() == other.getNumerator() && getDenominator() == other.getDenominator();
     }
+
+    public String toString() {
+        return getNumerator() + "/" + getDenominator();
+    }
 }
