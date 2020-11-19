@@ -134,7 +134,9 @@ public class Tester {
         test = "RationalNumber.toString()";
         try {
             RationalNumber num = new RationalNumber(43, 7);
+            RationalNumber num1 = new RationalNumber(54, 0);
             check(test, num.toString(), "43/7");
+            check(test, num1.toString(), "0/1");
         } catch(RuntimeException e) {
             except(test, e);
         }
@@ -161,6 +163,24 @@ public class Tester {
             RationalNumber num = new RationalNumber(21, 65);
             RationalNumber other = new RationalNumber(42, 5);
             check(test, num.divide(other).toString(), "1/26");
+        } catch(RuntimeException e) {
+            except(test, e);
+        }
+
+        test = "RationalNumber.add(RationalNumber other)";
+        try {
+            RationalNumber num = new RationalNumber(21, 65);
+            RationalNumber other = new RationalNumber(42, 5);
+            check(test, num.add(other).toString(), "567/65");
+        } catch(RuntimeException e) {
+            except(test, e);
+        }
+
+        test = "RationalNumber.subtract(RationalNumber other)";
+        try {
+            RationalNumber num = new RationalNumber(21, 65);
+            RationalNumber other = new RationalNumber(42, 5);
+            check(test, num.subtract(other).toString(), "");
         } catch(RuntimeException e) {
             except(test, e);
         }

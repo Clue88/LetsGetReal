@@ -1,10 +1,14 @@
 public class RationalNumber extends RealNumber {
     private int numerator, denominator;
     
-    public RationalNumber(int nume, int demo) {
+    public RationalNumber(int nume, int deno) {
         super(0.0);
         numerator = nume;
-        denominator = demo;
+        denominator = deno;
+        if (denominator == 0) {
+            numerator = 0;
+            denominator = 1;
+        }
         reduce();
     }
 
@@ -64,5 +68,13 @@ public class RationalNumber extends RealNumber {
     
     public RationalNumber divide(RationalNumber other) {
         return new RationalNumber(getNumerator()*other.getDenominator(), getDenominator()*other.getNumerator());
+    }
+
+    public RationalNumber add(RationalNumber other) {
+        return new RationalNumber(getNumerator()*other.getDenominator() + other.getNumerator()*getDenominator(), getDenominator() * other.getDenominator());
+    }
+
+    public RationalNumber subtract(RationalNumber other) {
+        return new RationalNumber(getNumerator()*other.getDenominator() - other.getNumerator()*getDenominator(), getDenominator() * other.getDenominator());
     }
 }
