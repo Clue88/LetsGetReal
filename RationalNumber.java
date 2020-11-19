@@ -18,4 +18,12 @@ public class RationalNumber extends RealNumber {
     public double getValue() {
         return (double) getNumerator() / getDenominator();
     }
+
+    public RationalNumber reciprocal() {
+        return new RationalNumber(getDenominator(), getNumerator());
+    }
+
+    public boolean equals(RationalNumber other) {
+        return getNumerator() == other.getNumerator() && getDenominator() == other.getDenominator();
+    }
 }

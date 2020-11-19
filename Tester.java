@@ -108,6 +108,31 @@ public class Tester {
             except(test, e);
         }
 
+        test = "RationalNumber.reciprocal()";
+        try {
+            int rand = (int) Math.floor(Math.random() * 1000);
+            int rand1 = (int) Math.floor(Math.random() * 1000);
+            RationalNumber num = new RationalNumber(rand, rand1);
+            check(test, num.reciprocal().toString(), (new RationalNumber(rand1, rand)).toString());
+        } catch(RuntimeException e) {
+            except(test, e);
+        }
+
+        test = "RationalNumber.equals()";
+        try {
+            int rand = (int) Math.floor(Math.random() * 1000);
+            int rand1 = (int) Math.floor(Math.random() * 1000);
+            int rand2 = (int) Math.floor(Math.random() * 1000);
+            int rand3 = (int) Math.floor(Math.random() * 1000);
+            RationalNumber num = new RationalNumber(rand, rand1);
+            RationalNumber other = new RationalNumber(rand, rand1);
+            RationalNumber other1 = new RationalNumber(rand2, rand3);
+            check(test, num.equals(other), true);
+            check(test, num.equals(other1), false);
+        } catch(RuntimeException e) {
+            except(test, e);
+        }
+
         if (ERR == 0) System.out.println("All good!");
         else if (ERR == 1) System.out.println("Uh oh... 1 error found.");
         else System.out.println("Uh oh... " + ERR + " errors found.");
