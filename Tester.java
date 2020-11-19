@@ -2,13 +2,22 @@ public class Tester {
     public static int ERR = 0;
     public static boolean DEBUG = true;
     public static void main(String[] args) {
-        double rand = Math.random() * 1000;
         String test = "";
 
         test = "RealNumber.getValue()";
         try {
+            double rand = Math.random() * 1000;
             RealNumber num = new RealNumber(rand);
             check(test, num.getValue(), rand);
+        } catch(RuntimeException e) {
+            except(test, e);
+        }
+
+        test = "RealNumber.toString()";
+        try {
+            double rand = Math.random() * 1000;
+            RealNumber num = new RealNumber(rand);
+            check(test, num.toString(), ""+rand);
         } catch(RuntimeException e) {
             except(test, e);
         }
