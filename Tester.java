@@ -2,6 +2,7 @@ public class Tester {
     public static int ERR = 0;
     public static boolean DEBUG = true;
     public static void main(String[] args) {
+        if (args.length > 0 && Boolean.parseBoolean(args[0]) == false) DEBUG = false;
         String test = "";
 
         test = "RealNumber.getValue()";
