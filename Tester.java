@@ -136,8 +136,10 @@ public class Tester {
         try {
             RationalNumber num = new RationalNumber(43, 7);
             RationalNumber num1 = new RationalNumber(54, 0);
+            RationalNumber num2 = new RationalNumber(74, 1);
             check(test, num.toString(), "43/7");
-            check(test, num1.toString(), "0/1");
+            check(test, num1.toString(), "0");
+            check(test, num2.toString(), "74");
         } catch(RuntimeException e) {
             except(test, e);
         }
