@@ -2,7 +2,7 @@ public class RationalNumber extends RealNumber {
     private int numerator, denominator;
     
     public RationalNumber(int nume, int deno) {
-        super((double) nume/deno);
+        super((double) nume / deno);
         numerator = nume;
         denominator = deno;
         if (denominator == 0) {
