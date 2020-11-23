@@ -137,9 +137,11 @@ public class Tester {
             RationalNumber num = new RationalNumber(43, 7);
             RationalNumber num1 = new RationalNumber(54, 0);
             RationalNumber num2 = new RationalNumber(74, 1);
+            RationalNumber num3 = new RationalNumber(0, 47);
             check(test, num.toString(), "43/7");
             check(test, num1.toString(), "0");
             check(test, num2.toString(), "74");
+            check(test, num3.toString(), "0");
         } catch(RuntimeException e) {
             except(test, e);
         }
