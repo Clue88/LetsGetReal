@@ -2,7 +2,9 @@ public abstract class Number {
     public abstract double getValue();
 
     public int compareTo(Number other) {
-        return (int) Math.round(getValue() - other.getValue());
+        if (getValue() > other.getValue()) return 1;
+        else if (getValue() < other.getValue()) return -1;
+        else return 0;
     }
 
     public boolean equals(Number other) {
